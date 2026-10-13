@@ -1,0 +1,38 @@
+NAVIGATION - LOW-FIDELITY WIREFRAMES
+
+EXPANDED (VIEWPORT AT LEAST 600 CSS PIXELS)
++----------------------+----------------------------------------------+
+| FRUIT SHOP           | Page content                                 |
+|                      |                                              |
+| > Products           |                                              |
+|   ProductDetails     |                                              |
+|   ShoppingCart  (2)  |                                              |
+|   Checkout           |                                              |
+|                      |                                              |
+|                      |                                              |
++----------------------+----------------------------------------------+
+
+COLLAPSED (VIEWPORT NARROWER THAN 600 CSS PIXELS)
++------+------------------------------+
+| FR   | Page content                 |
+|      |                              |
+| > P  |                              |
+|   D  |                              |
+|   C2 |                              |
+|   O  |                              |
+|      |                              |
++------+------------------------------+
+
+ABBREVIATIONS
+P = Products
+D = ProductDetails
+C = ShoppingCart (C2 depicts a cart count badge of 2)
+O = Checkout
+
+BEHAVIOR
+- Keep the menu on the left and provide access to all four pages.
+- Highlight the active page; optionally show the cart item count.
+- Below 600 CSS pixels, show one- or two-letter labels but retain each
+  link's full accessible name (for example, aria-label="Products").
+- Keep navigation client-side and preserve cart state while navigating
+  during the current browser session.

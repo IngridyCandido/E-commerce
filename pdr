@@ -1,0 +1,120 @@
+# PRD: Protótipo de Loja de Frutas
+
+## 1. Resumo do produto
+
+Criar uma loja virtual demonstrativa de frutas para que compradores possam consultar produtos, ver detalhes, montar um carrinho e simular a finalização de um pedido. O protótipo é uma aplicação web estática, executada inteiramente no navegador, destinada a demonstrar os principais conceitos de uma experiência de compra.
+
+## 2. Objetivos e não objetivos
+
+### Objetivos
+- Apresentar um catálogo de 10 frutas com nome, descrição, preço por unidade e emoji representativo.
+- Permitir navegar entre Produtos, ProductDetails, ShoppingCart e Checkout.
+- Demonstrar seleção de quantidades, operações básicas de carrinho e cálculo de preços.
+- Oferecer uma interface visualmente agradável que se adapte a telas de desktop e telefone.
+
+### Não objetivos
+- Não implementar autenticação, perfis de usuário, banco de dados, APIs ou persistência em servidor.
+- Não processar pagamentos, calcular impostos ou cobrar frete.
+- Não representar estoque real, confirmação de compra real ou envio de pedidos.
+- Não exigir acabamento visual de produção.
+
+## 3. Público-alvo
+
+Compradores online interessados em escolher frutas e entender como seria um fluxo simples de compra. A interface deve ser compreensível para usuários sem conhecimento técnico e utilizável tanto com mouse quanto com toque.
+
+## 4. Escopo e navegação
+
+O protótipo terá quatro páginas ou visualizações: **Products**, **ProductDetails**, **ShoppingCart** e **Checkout**. Um menu de navegação fixo no lado esquerdo deve permitir acesso direto a cada uma delas. Em telas muito estreitas, com largura inferior a 300 CSS pixels, o menu deve mostrar uma abreviação de uma ou duas letras por item, mantendo os links acessíveis.
+
+Use navegação inteiramente no cliente. A seleção de um produto deve abrir ProductDetails para esse produto; a aplicação deve preservar os dados do carrinho ao alternar entre páginas durante a sessão. Incluir links de retorno e de continuação nos pontos apropriados do fluxo.
+
+## 5. Casos de uso principais
+
+1. Como comprador, quero ver os produtos disponíveis e escolher uma quantidade para adicionar ao carrinho.
+2. Como comprador, quero abrir os detalhes de uma fruta e voltar ao catálogo.
+3. Como comprador, quero revisar o carrinho, alterar quantidades e remover itens.
+4. Como comprador, quero revisar o resumo e o total e simular o processamento de um pedido.
+
+## 6. Requisitos funcionais
+
+### Products
+- Exibir os 10 produtos do conjunto de dados com emoji, nome e preço por unidade.
+- Disponibilizar um seletor de quantidade inteiro, com valor inicial 1 e mínimo 1, e uma ação **Add to Cart** para cada produto.
+- Permitir abrir ProductDetails selecionando o produto ou seu nome.
+- Ao adicionar um produto já presente, somar a quantidade ao item existente, em vez de criar uma linha duplicada.
+- Exibir uma confirmação visual breve após adicionar ao carrinho.
+
+### ProductDetails
+- Exibir emoji, nome, descrição completa e preço por unidade do produto selecionado.
+- Fornecer um link de retorno para Products.
+- Se nenhum produto válido estiver selecionado, mostrar uma mensagem simples e um link para Products.
+
+### ShoppingCart
+- Exibir cada item com nome, preço unitário, quantidade, subtotal da linha e ação para remover.
+- Permitir atualizar a quantidade por controles acessíveis; quantidades devem ser inteiros maiores ou iguais a 1. Uma quantidade definida como 0 deve remover o item.
+- Calcular novamente os subtotais e o total sempre que a quantidade mudar ou um item for removido.
+- Mostrar um estado de carrinho vazio com link para Products. O link para Checkout deve estar indisponível ou claramente bloqueado quando o carrinho estiver vazio.
+
+### Checkout
+- Exibir um resumo dos itens com nome, quantidade, preço unitário e subtotal, além do total do pedido.
+- Não solicitar dados pessoais nem informações de pagamento: isso está fora do escopo do protótipo.
+- Disponibilizar **Process Order** apenas quando houver itens no carrinho.
+- Ao selecionar **Process Order**, apresentar uma confirmação explícita de pedido simulado, sem fazer uma transação. Após a confirmação, limpar o carrinho e permitir voltar a Products.
+
+### Navegação e estado
+- Os quatro itens do menu esquerdo devem funcionar em todas as páginas.
+- Indicar visualmente a página atual e, se simples, mostrar a quantidade total de itens no carrinho.
+- Preservar o carrinho durante a navegação na sessão atual. Persistência após fechar ou recarregar o navegador não é obrigatória.
+
+## 7. Conjunto de dados de exemplo
+
+Usar dados locais estáticos em JavaScript. Os preços são exemplos em dólares americanos (USD), sem impostos ou frete. A unidade deve aparecer junto ao preço para evitar ambiguidades.
+
+| ID | Produto | Descrição | Preço por unidade | Emoji |
+|---|---|---|---:|:---:|
+| apple | Maçã | Maçãs crocantes e doces, ótimas para um lanche. | $1.20 / peça | 🍎 |
+| banana | Banana | Bananas maduras e macias, boas para comer ou usar em receitas. | $0.60 / peça | 🍌 |
+| orange | Laranja | Laranjas suculentas com sabor cítrico e fresco. | $0.90 / peça | 🍊 |
+| strawberry | Morango | Morangos vermelhos e doces, vendidos em uma cesta. | $4.50 / cesta (1 lb) | 🍓 |
+| grapes | Uvas | Uvas doces e sem sementes, vendidas por libra. | $3.20 / lb | 🍇 |
+| watermelon | Melancia | Melancia refrescante, vendida por unidade. | $6.00 / peça | 🍉 |
+| pineapple | Abacaxi | Abacaxi tropical, doce e levemente ácido. | $3.50 / peça | 🍍 |
+| mango | Manga | Mangas maduras e aromáticas, vendidas por unidade. | $1.80 / peça | 🥭 |
+| peach | Pêssego | Pêssegos macios e perfumados, vendidos por unidade. | $2.00 / peça | 🍑 |
+| kiwi | Kiwi | Kiwi fresco com interior verde e sabor levemente ácido. | $0.75 / peça | 🥝 |
+
+Cada registro deve conter pelo menos `id`, `name`, `description`, `price`, `unit` e `emoji`. O preço deve ser numérico para permitir cálculos; formatar valores para exibição como USD com duas casas decimais.
+
+## 8. Direção visual e responsividade
+
+- Criar uma interface limpa, amigável e relacionada a uma loja de frutas, com hierarquia visual clara, cores agradáveis e tipografia legível.
+- Usar CSS responsivo para que o conteúdo se reorganize em telas pequenas e grandes; não permitir que o conteúdo principal cause rolagem horizontal em larguras usuais de telefone.
+- Manter o menu no lado esquerdo quando houver espaço. Abaixo de 300 CSS pixels, substituir os rótulos do menu por abreviações de uma ou duas letras e manter cada item identificável por `aria-label` ou texto acessível equivalente.
+- Os emojis são as imagens dos produtos; não é necessário baixar ou integrar imagens externas.
+- Usar elementos semânticos, rótulos visíveis nos controles, foco de teclado perceptível e botões com nomes claros.
+- A prioridade é uma apresentação básica e funcional, não uma interface totalmente polida.
+
+## 9. Requisitos técnicos
+
+- Implementar como aplicação web client-side usando HTML, CSS e JavaScript.
+- Não usar servidor, backend, autenticação, banco de dados ou serviço de pagamento.
+- Manter o conjunto de dados no próprio projeto e o estado do carrinho em memória durante a sessão.
+- Implementar navegação entre as quatro visualizações sem recarregar a página; usar URLs hash ou outro mecanismo simples de cliente, preservando acesso direto às páginas quando possível.
+- Não exigir bibliotecas ou frameworks externos.
+- A aplicação deve poder ser aberta ou servida localmente conforme a estrutura de arquivos gerada, sem configuração de backend.
+
+## 10. Critérios de aceitação
+
+- O catálogo mostra exatamente 10 frutas, cada qual com nome, emoji, descrição disponível nos detalhes e preço com unidade.
+- É possível navegar para todas as quatro páginas pelo menu esquerdo e identificar a página ativa.
+- Em uma largura inferior a 300 CSS pixels, os rótulos do menu viram abreviações de uma ou duas letras e os destinos continuam acessíveis.
+- Selecionar um produto abre os detalhes corretos; o link de retorno leva a Products.
+- Adicionar uma quantidade ao carrinho cria ou atualiza o item e a quantidade escolhida é refletida no carrinho.
+- Atualizar ou remover itens recalcula corretamente subtotais e total; o estado vazio oferece retorno ao catálogo.
+- Checkout mostra os itens e o total corretos, não permite processar um carrinho vazio e, quando acionado com itens, mostra confirmação simulada e limpa o carrinho.
+- A interface permanece utilizável em telas de desktop e telefone sem sobreposição ou rolagem horizontal no conteúdo principal.
+- Nenhum fluxo solicita login ou dados de pagamento, e nenhuma transação real é realizada.
+
+## 11. Entrega
+
+Entregar os arquivos necessários para executar o protótipo no workspace, mantendo a implementação simples e legível. Incluir uma breve indicação de como abrir ou executar localmente. O resultado é uma demonstração estática do fluxo de compra, não uma loja pronta para produção.

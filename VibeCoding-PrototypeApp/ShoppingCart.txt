@@ -1,0 +1,34 @@
+SHOPPING CART PAGE - LOW-FIDELITY WIREFRAME
+
+POPULATED CART
++----------------------+------------------------------------------------+
+| FRUIT SHOP           | Shopping cart                                 |
+|   Products           |                                                |
+|   ProductDetails     | Item           Unit price   Quantity   Subtotal|
+| > ShoppingCart  (2)  | ------------------------------------------------|
+|   Checkout           | 🍎 Apple       $1.20 / item  [-] 2 [+]  $2.40  |
+|                      |                              [Remove]          |
+|                      | 🍌 Banana      $0.60 / item  [-] 3 [+]  $1.80  |
+|                      |                              [Remove]          |
+|                      |                                                |
+|                      | Cart total:                            $4.20   |
+|                      | [Continue shopping]       [Proceed to Checkout]|
++----------------------+------------------------------------------------+
+
+EMPTY CART
++----------------------+------------------------------------------------+
+| FRUIT SHOP           | Shopping cart                                 |
+|   Products           |                                                |
+|   ProductDetails     | Your cart is empty.                            |
+| > ShoppingCart       |                                                |
+|   Checkout           | [Browse products]                              |
+|                      |                                                |
+|                      | Proceed to Checkout is unavailable.            |
++----------------------+------------------------------------------------+
+
+INTERACTIONS
+- Updating a quantity recalculates that line subtotal and the cart total.
+- Removing an item removes its line. Setting quantity to 0 removes the item.
+- Empty state offers a link to Products; checkout is blocked while empty.
+- On narrow screens, stack item details, quantity controls, subtotal, and
+  remove action vertically rather than allowing horizontal overflow.

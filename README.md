@@ -18,3 +18,7 @@ Este exercício inclui as seguintes tarefas:
     Crie um aplicativo protótipo inicial : Use o GitHub Copilot Agent e seus requisitos de produto para criar um aplicativo protótipo inicial.
 
     Refinar seu aplicativo protótipo : Use o GitHub Copilot Agent para concluir uma série de atualizações iterativas que refinam a experiência do usuário e garantem que seu aplicativo satisfaça os requisitos pretendidos.
+
+## Como abrir o protótipo
+
+Abra `VibeCoding-PrototypeApp/ShoppingApp/index.html` diretamente no navegador. Se preferir, inicie um servidor estático dentro da pasta `ShoppingApp` com `python3 -m http.server 8000` e acesse `http://localhost:8000`.

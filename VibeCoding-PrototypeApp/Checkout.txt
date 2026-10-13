@@ -1,0 +1,23 @@
+CHECKOUT PAGE - LOW-FIDELITY WIREFRAME
+
++----------------------+------------------------------------------------+
+| FRUIT SHOP           | Checkout                                      |
+|   Products           |                                                |
+|   ProductDetails     | Order summary                                 |
+|   ShoppingCart  (2)  | Item                  Qty   Unit price  Subtotal|
+| > Checkout           | ------------------------------------------------|
+|                      | 🍎 Apple             2     $1.20       $2.40   |
+|                      | 🍌 Banana            3     $0.60       $1.80   |
+|                      |                                                |
+|                      | Order total:                            $4.20  |
+|                      |                                                |
+|                      | [Process Order]                                |
+|                      |                                                |
+|                      | No address or payment fields.                 |
++----------------------+------------------------------------------------+
+
+AFTER PROCESS ORDER
+- Show an explicit simulated-order confirmation; no transaction occurs.
+- Clear the cart and offer a way to return to Products.
+- Do not enable Process Order when the cart is empty.
+- Do not request address or payment information.

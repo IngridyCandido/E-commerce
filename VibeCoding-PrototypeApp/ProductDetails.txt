@@ -1,0 +1,20 @@
+PRODUCT DETAILS PAGE - LOW-FIDELITY WIREFRAME
+
++----------------------+------------------------------------------------+
+| FRUIT SHOP           | Product details                                |
+|   Products           |                                                |
+| > ProductDetails     | [< Back to Products]                          |
+|   ShoppingCart  (2)  |                                                |
+|   Checkout           | +--------------------------------------------+ |
+|                      | |                    🍎                      | |
+|                      | | Apple                                      | |
+|                      | | Crisp, sweet apples, great for a snack.    | |
+|                      | | $1.20 / item                              | |
+|                      | +--------------------------------------------+ |
++----------------------+------------------------------------------------+
+
+INTERACTIONS
+- Show the selected product's emoji, name, full description, and unit price.
+- Back to Products returns to the catalog.
+- If no valid product is selected, show a short not-found message and a
+  Back to Products link.

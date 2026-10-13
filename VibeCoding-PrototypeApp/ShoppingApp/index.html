@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#183e32">
+    <meta name="description" content="Browse fresh fruit and try a simple shopping flow.">
+    <title>Orchard & Co. | Fruit Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#/products" aria-label="Orchard and Company home">
+          <span class="brand-mark" aria-hidden="true">o.</span>
+          <span class="brand-name">orchard<span>&co.</span></span>
+        </a>
+
+        <div class="sidebar-label">YOUR MARKET</div>
+        <nav class="primary-nav" aria-label="Main menu">
+          <a class="nav-link" href="#/products" data-page="products" aria-label="Products" title="Products">
+            <span class="nav-index" aria-hidden="true">01</span>
+            <span class="nav-emoji" aria-hidden="true">🍎</span>
+            <span class="nav-short" aria-hidden="true">P</span>
+            <span class="nav-label">Products</span>
+          </a>
+          <a class="nav-link" href="#/details/apple" data-page="details" aria-label="Product details" title="Product details">
+            <span class="nav-index" aria-hidden="true">02</span>
+            <span class="nav-emoji" aria-hidden="true">🔎</span>
+            <span class="nav-short" aria-hidden="true">D</span>
+            <span class="nav-label">Product details</span>
+          </a>
+          <a class="nav-link" href="#/cart" data-page="cart" aria-label="ShoppingCart" title="Shopping cart">
+            <span class="nav-index" aria-hidden="true">03</span>
+            <span class="nav-emoji" aria-hidden="true">🛒</span>
+            <span class="nav-short" aria-hidden="true">C</span>
+            <span class="nav-label">Shopping cart</span>
+            <span class="nav-count" id="nav-cart-count" hidden>0</span>
+          </a>
+          <a class="nav-link" href="#/checkout" data-page="checkout" aria-label="Checkout" title="Checkout">
+            <span class="nav-index" aria-hidden="true">04</span>
+            <span class="nav-emoji" aria-hidden="true">🧾</span>
+            <span class="nav-short" aria-hidden="true">O</span>
+            <span class="nav-label">Checkout</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="note-spark" aria-hidden="true">✳</span>
+          <span class="nav-label">Good things grow here.</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="topbar-kicker"><span class="live-dot" aria-hidden="true"></span> THE EVERYDAY FRUIT MARKET</div>
+          <a class="topbar-cart" href="#/cart" aria-label="Open shopping cart">
+            <span aria-hidden="true">Bag</span>
+            <span id="top-cart-count" class="top-cart-count">0</span>
+          </a>
+        </header>
+        <div id="app-view" class="page-stage" tabindex="-1"></div>
+        <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+      </main>
+    </div>
+  </body>
+</html>
